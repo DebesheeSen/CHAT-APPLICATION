@@ -1,6 +1,6 @@
 //this middleware is used to authenticate users and ensure un-authenticated ones cannot access the nect functions
 import jwt from 'jsonwebtoken';
-import User from '../models/user.model';
+import User from '../models/user.model.js';
 
 const protectRoute = async (req,res,next)=>{
     try{
