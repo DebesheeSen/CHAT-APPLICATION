@@ -22,11 +22,12 @@ export const signup = async (req, res) => {
 		const salt = await bcrypt.genSalt(10); //function returns a promise
 		const hashedPassword = await bcrypt.hash(password, salt); //function returns a promise
 
+		//add profile picture via an api call
 		// https://avatar-placeholder.iran.liara.run/
-
 		const boyProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
 		const girlProfilePic = `https://avatar.iran.liara.run/public/girl?username=${username}`;
-
+        
+		//create a new User in database
 		const newUser = new User({
 			fullName,
 			username,

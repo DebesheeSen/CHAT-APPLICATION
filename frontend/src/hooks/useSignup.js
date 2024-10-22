@@ -23,7 +23,7 @@ const useSignup = () => {
 				throw new Error(data.error);
 			}
             //localstorage
-			localStorage.setItem("chat-user", JSON.stringify(data));
+			localStorage.setItem("chat-user", JSON.stringify(data));//data set to local storage so that we can know if user is signed up.
 			//context
             setAuthUser(data);
 		} catch (error) {
